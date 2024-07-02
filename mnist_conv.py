@@ -1,5 +1,6 @@
 import numpy as np
-from keras.datasets import mnist
+import datasets as mnist
+#from keras.datasets import mnist
 from keras.utils import np_utils
 
 from dense import Dense
@@ -22,7 +23,7 @@ def preprocess_data(x, y, limit):
     return x, y
 
 # load MNIST from server, limit to 100 images per class since we're not training on GPU
-(x_train, y_train), (x_test, y_test) = mnist.load_data()
+(x_train, y_train), (x_test, y_test) = mnist
 x_train, y_train = preprocess_data(x_train, y_train, 100)
 x_test, y_test = preprocess_data(x_test, y_test, 100)
 
